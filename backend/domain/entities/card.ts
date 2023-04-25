@@ -13,7 +13,7 @@ export class Card {
     this.lista = data.lista;
   }
 
-  public getLista() {
+  public getCard() {
     return {
       id: this.id,
       conteudo: this.conteudo,
