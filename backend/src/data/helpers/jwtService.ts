@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { ITokenGenerator } from "../protocols/jwt";
+import { ITokenGenerator } from "../protocols/helpers/jwt";
 
 export class JwtService implements ITokenGenerator {
   private secret = process.env.SECRET_TOKEN!;

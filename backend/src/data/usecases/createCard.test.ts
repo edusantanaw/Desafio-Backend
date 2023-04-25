@@ -1,43 +1,8 @@
-import { Card } from "../../domain/entities/card";
-import { ICreateUsecase } from "../../domain/usecases/create";
+import { RepositoryInMemory } from "../../../test/mocks/repository";
+import { ICard } from "../../types/card";
+import { CreateCardUsecase } from "./createCard";
 
-type input = {
-  titulo: string;
-  conteudo: string;
-  lista: string;
-};
-
-type ICard = {
-  id: string;
-  titulo: string;
-  conteudo: string;
-  lista: string;
-};
-
-interface ICreateRepository<T> {
-  create: (data: T) => Promise<T>;
-}
-
-export class CreateCardUsecase implements ICreateUsecase<input, ICard> {
-  constructor(private readonly cardRepository: ICreateRepository<ICard>) {}
-  public async execute(data: input): Promise<ICard> {
-    const card = new Card(data);
-    const newCard = await this.cardRepository.create(card.getCard());
-    return newCard;
-  }
-}
-
-class RepositoryInMemory<T> {
-  public items: T[] = [];
-  public inputCreate: unknown = null;
-  public async create(item: T) {
-    this.inputCreate = item;
-    this.items.push(item);
-    return item;
-  }
-}
-
-function makeValidCard() {
+export function makeValidCard() {
   return {
     conteudo: "any_content",
     lista: "any_list",

@@ -1,5 +1,5 @@
 import { IAuthUsecase } from "../../domain/usecases/auth";
-import { ITokenGenerator } from "../protocols/jwt";
+import { ITokenGenerator } from "../protocols/helpers/jwt";
 
 export class AuthUsecase implements IAuthUsecase {
   private login = process.env.LOGIN!;

@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { ICard } from "../../types/card";
 
 export class Card {
   private id: string;
@@ -13,7 +14,7 @@ export class Card {
     this.lista = data.lista;
   }
 
-  public getCard() {
+  public getCard(): ICard {
     return {
       id: this.id,
       conteudo: this.conteudo,
