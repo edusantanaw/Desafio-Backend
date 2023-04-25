@@ -14,10 +14,26 @@ type ICard = {
   lista: string;
 };
 
+interface ICreateRepository<T> {
+  create: (data: T) => Promise<T>;
+}
+
 export class CreateCardUsecase implements ICreateUsecase<input, ICard> {
+  constructor(private readonly cardRepository: ICreateRepository<ICard>) {}
   public async execute(data: input): Promise<ICard> {
     const card = new Card(data);
-    return card.getCard();
+    const newCard = await this.cardRepository.create(card.getCard());
+    return newCard;
+  }
+}
+
+class RepositoryInMemory<T> {
+  public items: T[] = [];
+  public inputCreate: unknown = null;
+  public async create(item: T) {
+    this.inputCreate = item;
+    this.items.push(item);
+    return item;
   }
 }
 
@@ -29,11 +45,24 @@ function makeValidCard() {
   };
 }
 
+function makeSut() {
+  const cardRepository = new RepositoryInMemory<ICard>();
+  const createCardUsecase = new CreateCardUsecase(cardRepository);
+  return { createCardUsecase, cardRepository };
+}
+
 describe("CreateCardUsecase", () => {
+  test("Should call cardRepository with correct values", async () => {
+    const { createCardUsecase, cardRepository } = makeSut();
+    await createCardUsecase.execute({ ...makeValidCard() });
+    const { id, ...rest } = cardRepository.inputCreate as ICard;
+    expect(rest).toEqual(makeValidCard());
+  });
+
   test("Should return a new card if is created", async () => {
-    const createCardUsecase = new CreateCardUsecase();
-    const response =await createCardUsecase.execute(makeValidCard());
-    const {id, ...rest} = response;
+    const { createCardUsecase } = makeSut();
+    const response = await createCardUsecase.execute(makeValidCard());
+    const { id, ...rest } = response;
     expect(rest).toEqual(makeValidCard());
   });
 });
