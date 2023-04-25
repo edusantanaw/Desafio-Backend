@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682448514837" clover="3.2.0">
-  <project timestamp="1682448514837" name="All files">
-    <metrics statements="160" coveredstatements="126" conditionals="38" coveredconditionals="29" methods="30" coveredmethods="19" elements="228" coveredelements="174" complexity="0" loc="160" ncloc="160" packages="9" files="14" classes="14"/>
+<coverage generated="1682450458272" clover="3.2.0">
+  <project timestamp="1682450458272" name="All files">
+    <metrics statements="191" coveredstatements="141" conditionals="47" coveredconditionals="34" methods="37" coveredmethods="22" elements="275" coveredelements="197" complexity="0" loc="191" ncloc="191" packages="9" files="19" classes="19"/>
     <package name="data.helpers">
       <metrics statements="10" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="jwtService.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\helpers\jwtService.ts">
@@ -28,7 +28,7 @@
       </file>
     </package>
     <package name="data.protocols.repository">
-      <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="15" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <file name="create.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\protocols\repository\create.ts">
         <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
@@ -41,9 +41,24 @@
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
       </file>
+      <file name="loadById.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\protocols\repository\loadById.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="updateCard.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\protocols\repository\updateCard.ts">
+        <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
     </package>
     <package name="data.usecases">
-      <metrics statements="45" coveredstatements="45" conditionals="14" coveredconditionals="14" methods="9" coveredmethods="9"/>
+      <metrics statements="60" coveredstatements="60" conditionals="18" coveredconditionals="18" methods="12" coveredmethods="12"/>
       <file name="auth.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\usecases\auth.ts">
         <metrics statements="14" coveredstatements="14" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
@@ -74,14 +89,14 @@
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
+        <line num="12" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
       </file>
       <file name="load.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\usecases\load.ts">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
@@ -98,36 +113,54 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
       </file>
-    </package>
-    <package name="domain.entities">
-      <metrics statements="32" coveredstatements="32" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
-      <file name="card.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\domain\entities\card.ts">
-        <metrics statements="32" coveredstatements="32" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="updateCard.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\usecases\updateCard.ts">
+        <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="9" count="4" type="stmt"/>
         <line num="10" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="17" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="domain.entities">
+      <metrics statements="32" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="card.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\domain\entities\card.ts">
+        <metrics statements="32" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="17" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="10" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
@@ -138,7 +171,7 @@
       </file>
     </package>
     <package name="domain.usecases">
-      <metrics statements="9" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="16" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="0"/>
       <file name="auth.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\domain\usecases\auth.ts">
         <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
@@ -151,7 +184,20 @@
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
       </file>
+      <file name="delete.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\domain\usecases\delete.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
       <file name="load.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\domain\usecases\load.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="update.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\domain\usecases\update.ts">
         <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
