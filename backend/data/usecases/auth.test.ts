@@ -1,25 +1,8 @@
 import * as dotenv from "dotenv";
-import { IAuthUsecase } from "../../domain/usecases/auth";
+import { ITokenGenerator } from "../protocols/jwt";
+import { AuthUsecase } from "./auth";
 
 dotenv.config();
-
-export class AuthUsecase implements IAuthUsecase {
-  private login = process.env.LOGIN!;
-  private pass = process.env.SENHA!;
-  constructor(
-    private readonly jwtService: ITokenGenerator
-  ){}
-  public async execute(login: string, password: string): Promise<string> {
-    if (login != this.login) throw new Error("Login invalido!");
-    if (password != this.pass) throw new Error("Senha invalida!");
-    const accessToken = this.jwtService.generate(login);
-    return accessToken;
-  }
-}
-
-interface ITokenGenerator {
-  generate: (data: string) => Promise<string>;
-}
 
 class JwtServiceMock implements ITokenGenerator {
   public input: unknown = null;
@@ -52,8 +35,8 @@ describe("AuthUsecase", () => {
   });
 
   test("Should call jwtService with correct value", async () => {
-    const { authUsecase , jwtService} = makeSut();
-     await authUsecase.execute("letscode", "lets@123");
+    const { authUsecase, jwtService } = makeSut();
+    await authUsecase.execute("letscode", "lets@123");
     expect(jwtService.input).toBe("letscode");
   });
 
