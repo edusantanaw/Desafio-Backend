@@ -1,6 +1,6 @@
-import * as dotenv from "dotenv";
 import { ITokenGenerator } from "../protocols/jwt";
 import { AuthUsecase } from "./auth";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
