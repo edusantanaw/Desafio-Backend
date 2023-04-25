@@ -23,7 +23,7 @@ describe("AuthController", () => {
     const { authController } = makeSut();
     const response = await authController.handle({ login: "", password: "" });
     expect(response.body).toBe("O login é necessario!");
-    expect(response.status).toBe(400);
+    expect(response.statusCode).toBe(400);
   });
 
   test("Should return a badRequest if password is not provided", async () => {
@@ -33,7 +33,7 @@ describe("AuthController", () => {
       password: "",
     });
     expect(response.body).toBe("A senha é necessaria!");
-    expect(response.status).toBe(400);
+    expect(response.statusCode).toBe(400);
   });
 
   test("Should return a ExceptionError if authUsecase throw", async () => {
@@ -44,7 +44,7 @@ describe("AuthController", () => {
       password: "any",
     });
     expect(response.body).toBe("Error");
-    expect(response.status).toBe(400);
+    expect(response.statusCode).toBe(400);
   });
 
   test("Should return ok and a token if is authenticated", async () => {
@@ -54,6 +54,6 @@ describe("AuthController", () => {
       password: "any",
     });
     expect(response.body).toBe("access_token");
-    expect(response.status).toBe(200);
+    expect(response.statusCode).toBe(200);
   });
 });

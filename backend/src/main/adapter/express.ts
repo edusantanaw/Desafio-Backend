@@ -6,11 +6,11 @@ type httpResponse<T> = {
   body: T;
 };
 
-interface IController<input, output> {
-  handle: (data: input) => Promise<httpResponse<output>>;
+interface IController<input> {
+  handle: (data: input) => Promise<httpResponse<unknown>>;
 }
 
-export function adapter<In, Out>(controller: IController<In, Out>) {
+export function adapter<In>(controller: IController<In>) {
   return async (req: Request, res: Response) => {
     try {
       const { body, statusCode } = await controller.handle({

@@ -11,7 +11,7 @@ function ExceptionError(data: unknown, status?: number) {
 
 function HttpRequest<T>(status: number, data: T) {
   return {
-    status,
+    statusCode: status,
     body: data,
   };
 }
