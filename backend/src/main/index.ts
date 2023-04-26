@@ -20,7 +20,7 @@ class Server {
 
   public async bootstrap() {
     this.middlewares();
-    database.sync();
+    database.sync({force: true});
     routes(this.app);
     this.start();
   }

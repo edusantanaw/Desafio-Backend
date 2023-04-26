@@ -17,6 +17,7 @@ export class CreateCardController {
       const card = await this.createUsecase.execute(data);
       return Created(card);
     } catch (error) {
+        console.log(error)
       return ServerError();
     }
   }

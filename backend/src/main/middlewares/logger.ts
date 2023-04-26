@@ -9,24 +9,24 @@ const updateLogger = (data: string, id: string, title: string) =>
 const removeLogger = (data: string, id: string, title: string) =>
   logger(data, id, title, "Removido");
 
-export const updateLoggerMiddleware = loggerMiddleware(updateLogger);
-export const removeLoggerMiddleware = loggerMiddleware(removeLogger);
-
 function logger(date: string, id: string, title: string, op: string) {
   console.log(`${date} - Card ${id} - ${title} - ${op}  `);
-}
-
-function getDate() {
-  const now = moment().tz("America/Sao_Paulo");
-  const format = now.format("DD-MM-YYYY HH:mm:ss");
-  return format;
 }
 
 function loggerMiddleware(logger: ILogger) {
   return (req: Request, res: Response, next: NextFunction) => {
     const id = req.params.id;
-    const title = req.body.title;
+    const title = req.body.titulo;
     const date = getDate();
     logger(date, id, title);
+    next();
   };
+}
+export const updateLoggerMiddleware = loggerMiddleware(updateLogger);
+export const removeLoggerMiddleware = loggerMiddleware(removeLogger);
+
+function getDate() {
+  const now = moment().tz("America/Sao_Paulo");
+  const format = now.format("DD-MM-YYYY HH:mm:ss");
+  return format;
 }

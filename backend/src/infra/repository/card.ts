@@ -4,9 +4,7 @@ import { ICardRepository } from "./contracts/card";
 
 export class CardRepository implements ICardRepository {
   public async create(data: ICard) {
-    const card = await Card.create({
-      data,
-    });
+    const card = Card.build(data);
     const newCard = (await card.save()).toJSON<ICard>();
     return newCard;
   }
@@ -18,7 +16,7 @@ export class CardRepository implements ICardRepository {
 
   public async loadById(id: string) {
     const card = await Card.findOne({ where: { id } });
-    
+
     if (!card) return null;
     return card?.toJSON<ICard>();
   }

@@ -18,7 +18,6 @@ export function adapter<In>(controller: IController<In>) {
         ...req.params,
         ...req.query,
       });
-
       return res.status(statusCode).json(body);
     } catch (error) {
       return ExceptionError(error, 500);

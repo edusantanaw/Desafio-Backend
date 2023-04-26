@@ -28,4 +28,4 @@ Card.init(
     timestamps: true,
   }
 );
-export { Card };
+export {Card}
