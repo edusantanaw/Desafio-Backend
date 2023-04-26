@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682512716192" clover="3.2.0">
-  <project timestamp="1682512716192" name="All files">
-    <metrics statements="262" coveredstatements="207" conditionals="70" coveredconditionals="56" methods="49" coveredmethods="34" elements="381" coveredelements="297" complexity="0" loc="262" ncloc="262" packages="9" files="23" classes="23"/>
+<coverage generated="1682514995186" clover="3.2.0">
+  <project timestamp="1682514995186" name="All files">
+    <metrics statements="293" coveredstatements="235" conditionals="81" coveredconditionals="66" methods="53" coveredmethods="38" elements="427" coveredelements="339" complexity="0" loc="293" ncloc="293" packages="10" files="25" classes="25"/>
     <package name="data.helpers">
       <metrics statements="10" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="jwtService.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\helpers\jwtService.ts">
@@ -97,14 +97,14 @@
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="14" type="stmt"/>
-        <line num="16" count="14" type="stmt"/>
-        <line num="17" count="14" type="stmt"/>
-        <line num="18" count="14" type="stmt"/>
-        <line num="19" count="14" type="stmt"/>
+        <line num="12" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="16" type="stmt"/>
+        <line num="16" count="16" type="stmt"/>
+        <line num="17" count="16" type="stmt"/>
+        <line num="18" count="16" type="stmt"/>
+        <line num="19" count="16" type="stmt"/>
       </file>
       <file name="deleteCard.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\data\usecases\deleteCard.ts">
         <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
@@ -164,28 +164,28 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="19" type="stmt"/>
-        <line num="6" count="19" type="stmt"/>
-        <line num="7" count="19" type="stmt"/>
-        <line num="8" count="19" type="stmt"/>
-        <line num="9" count="19" type="stmt"/>
-        <line num="10" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="19" type="stmt"/>
-        <line num="13" count="19" type="stmt"/>
-        <line num="14" count="19" type="stmt"/>
-        <line num="15" count="19" type="stmt"/>
-        <line num="16" count="19" type="stmt"/>
-        <line num="17" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="19" type="stmt"/>
-        <line num="19" count="19" type="stmt"/>
-        <line num="20" count="19" type="stmt"/>
-        <line num="21" count="19" type="stmt"/>
-        <line num="22" count="19" type="stmt"/>
-        <line num="23" count="19" type="stmt"/>
-        <line num="24" count="19" type="stmt"/>
-        <line num="25" count="19" type="stmt"/>
+        <line num="4" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="24" type="stmt"/>
+        <line num="6" count="24" type="stmt"/>
+        <line num="7" count="24" type="stmt"/>
+        <line num="8" count="24" type="stmt"/>
+        <line num="9" count="24" type="stmt"/>
+        <line num="10" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="24" type="stmt"/>
+        <line num="13" count="24" type="stmt"/>
+        <line num="14" count="24" type="stmt"/>
+        <line num="15" count="24" type="stmt"/>
+        <line num="16" count="24" type="stmt"/>
+        <line num="17" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="24" type="stmt"/>
+        <line num="19" count="24" type="stmt"/>
+        <line num="20" count="24" type="stmt"/>
+        <line num="21" count="24" type="stmt"/>
+        <line num="22" count="24" type="stmt"/>
+        <line num="23" count="24" type="stmt"/>
+        <line num="24" count="24" type="stmt"/>
+        <line num="25" count="24" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
@@ -230,7 +230,7 @@
       </file>
     </package>
     <package name="presentational.controllers">
-      <metrics statements="70" coveredstatements="70" conditionals="23" coveredconditionals="23" methods="9" coveredmethods="9"/>
+      <metrics statements="98" coveredstatements="98" conditionals="32" coveredconditionals="32" methods="12" coveredmethods="12"/>
       <file name="auth.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\presentational\controllers\auth.ts">
         <metrics statements="22" coveredstatements="22" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
@@ -310,13 +310,44 @@
         <line num="15" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
       </file>
+      <file name="updateCard.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\presentational\controllers\updateCard.ts">
+        <metrics statements="28" coveredstatements="28" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+      </file>
     </package>
     <package name="presentational.helpers">
-      <metrics statements="31" coveredstatements="31" conditionals="8" coveredconditionals="7" methods="9" coveredmethods="7"/>
+      <metrics statements="31" coveredstatements="31" conditionals="9" coveredconditionals="8" methods="9" coveredmethods="8"/>
       <file name="http-response.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\presentational\helpers\http-response.ts">
-        <metrics statements="31" coveredstatements="31" conditionals="8" coveredconditionals="7" methods="9" coveredmethods="7"/>
+        <metrics statements="31" coveredstatements="31" conditionals="9" coveredconditionals="8" methods="9" coveredmethods="8"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="5" count="1" type="stmt"/>
@@ -328,12 +359,12 @@
         <line num="11" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="24" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="24" type="stmt"/>
-        <line num="16" count="24" type="stmt"/>
-        <line num="17" count="24" type="stmt"/>
-        <line num="18" count="24" type="stmt"/>
-        <line num="19" count="24" type="stmt"/>
+        <line num="14" count="32" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="32" type="stmt"/>
+        <line num="16" count="32" type="stmt"/>
+        <line num="17" count="32" type="stmt"/>
+        <line num="18" count="32" type="stmt"/>
+        <line num="19" count="32" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
@@ -346,6 +377,15 @@
         <line num="29" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentational.protocols">
+      <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="schemaValidator.ts" path="C:\Users\eduardo\Downloads\code\desafio\backend\src\presentational\protocols\schemaValidator.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
       </file>
     </package>
     <package name="types">

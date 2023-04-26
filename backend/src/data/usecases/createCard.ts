@@ -3,7 +3,7 @@ import { ICreateUsecase } from "../../domain/usecases/create";
 import { ICard } from "../../types/card";
 import { ICreateRepository } from "../protocols/repository/create";
 
-type input = {
+export type input = {
   titulo: string;
   conteudo: string;
   lista: string;
