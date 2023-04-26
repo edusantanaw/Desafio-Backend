@@ -9,10 +9,8 @@ const updateLogger = (data: string, id: string, title: string) =>
 const removeLogger = (data: string, id: string, title: string) =>
   logger(data, id, title, "Removido");
 
-export const updateLoggerMiddleware = loggerMiddleware(updateLogger)
-export const removeLoggerMiddleware = loggerMiddleware(removeLogger)
-  
-
+export const updateLoggerMiddleware = loggerMiddleware(updateLogger);
+export const removeLoggerMiddleware = loggerMiddleware(removeLogger);
 
 function logger(date: string, id: string, title: string, op: string) {
   console.log(`${date} - Card ${id} - ${title} - ${op}  `);
