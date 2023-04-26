@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { Unauthorized } from "../../presentational/helpers/http-response";
 import { JwtService } from "../../data/helpers/jwtService";
+import { httpResponse } from "../adapter/express";
 
 const jwt = new JwtService();
 
@@ -11,12 +12,17 @@ function getToken(req: Request) {
   return token;
 }
 
+const requestError = <T>(data: httpResponse<T>, res: Response) => {
+  return res.status(data.statusCode).json(data.body);
+};
+
 export default (req: Request, res: Response, next: NextFunction) => {
   try {
     const token = getToken(req);
-    if (!token) return Unauthorized("Acesso negado!");
+    if (!token) return requestError(Unauthorized("Acesso negado!"), res);
     jwt.verify(token);
+    next();
   } catch (error) {
-    return Unauthorized("Token invalido!");
+    return requestError(Unauthorized("Token invalido!"), res);
   }
 };

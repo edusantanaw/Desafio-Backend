@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ExceptionError } from "../../presentational/helpers/http-response";
 
-type httpResponse<T> = {
+export type httpResponse<T> = {
   statusCode: number;
   body: T;
 };
