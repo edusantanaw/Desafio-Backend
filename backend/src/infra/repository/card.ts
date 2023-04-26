@@ -1,7 +1,8 @@
 import { ICard } from "../../types/card";
 import { Card } from "../models/card";
+import { ICardRepository } from "./contracts/card";
 
-export class CardRepository {
+export class CardRepository implements ICardRepository {
   public async create(data: ICard) {
     const card = await Card.create({
       data,
@@ -11,18 +12,18 @@ export class CardRepository {
   }
 
   public async load() {
-    const cards = (await Card.findAll()).forEach((item) =>
-      item.toJSON<ICard>()
-    );
+    const cards = (await Card.findAll()).map((item) => item.toJSON<ICard>());
     return cards;
   }
 
   public async loadById(id: string) {
     const card = await Card.findOne({ where: { id } });
+    
+    if (!card) return null;
     return card?.toJSON<ICard>();
   }
 
-  public async remove(id: string) {
+  public async delete(id: string) {
     await Card.destroy({ where: { id } });
   }
 
