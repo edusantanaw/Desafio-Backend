@@ -1,6 +1,7 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import routes from "./config/routes";
+import database from './config/db'
 
 class Server {
   private app = express();
@@ -17,8 +18,9 @@ class Server {
     this.app.listen(this.port, cb);
   }
 
-  public bootstrap() {
+  public async bootstrap() {
     this.middlewares();
+    database.sync();
     routes(this.app);
     this.start();
   }
