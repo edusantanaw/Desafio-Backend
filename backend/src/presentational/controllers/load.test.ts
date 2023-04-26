@@ -1,31 +1,8 @@
+import { LoadUsecaseMock } from "../../../test/mocks/usecases/load";
 import { makeValidCard } from "../../data/usecases/createCard.test";
-import { ILoadUsecase } from "../../domain/usecases/load";
 import { ICard } from "../../types/card";
-import { NoContent, Ok, ServerError } from "../helpers/http-response";
-
-export class LoadController<T> {
-  constructor(private readonly loadUsecase: ILoadUsecase<T>) {}
-
-  public async handle() {
-    try {
-      const response = await this.loadUsecase.execute();
-      if (!response) return NoContent();
-      return Ok(response);
-    } catch (error) {
-      return ServerError();
-    }
-  }
-}
-
-class LoadUsecaseMock<T> implements ILoadUsecase<T[] | null> {
-  public items: T[] = [];
-  public execeptionError: boolean = false;
-  public async execute(): Promise<T[] | null> {
-    if (this.execeptionError) throw new Error("error");
-    if (this.items.length === 0) return null;
-    return this.items;
-  }
-}
+import { ServerError } from "../helpers/http-response";
+import { LoadController } from "./load";
 
 function makeSut() {
   const loadUsecase = new LoadUsecaseMock<ICard>();
