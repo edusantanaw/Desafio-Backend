@@ -1,22 +1,9 @@
-import { SchemaValidatorMock } from "../../../test/mocks/helpers/schemaValidator";
-import { input } from "../../data/usecases/createCard";
-import { makeValidCard } from "../../data/usecases/createCard.test";
-import { Card } from "../../domain/entities/card";
-import { ICreateUsecase } from "../../domain/usecases/create";
-import { ICard } from "../../types/card";
-import { ServerError } from "../helpers/http-response";
-import { CreateCardController } from "./create";
-
-class CreateCardUsecaseMock implements ICreateUsecase<input, ICard> {
-  public input: unknown = false;
-  public exceptionError: boolean = false;
-  public async execute(data: input): Promise<ICard> {
-    this.input = data;
-    if (this.exceptionError) throw new Error("error");
-    const card = new Card(data);
-    return card.getCard();
-  }
-}
+import { input } from "../../src/data/usecases/createCard";
+import { CreateCardController } from "../../src/presentational/controllers/create";
+import { ServerError } from "../../src/presentational/helpers/http-response";
+import { SchemaValidatorMock } from "../mocks/helpers/schemaValidator";
+import { CreateCardUsecaseMock } from "../mocks/usecases/createCard";
+import { makeValidCard } from "../usecases/createCard.test";
 
 function makeSut() {
   const schemaValidor = new SchemaValidatorMock<input>();

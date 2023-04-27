@@ -1,16 +1,5 @@
-import { IAuthUsecase } from "../../domain/usecases/auth";
-import { AuthController } from "./auth";
-
-class AuthUsecaseMock implements IAuthUsecase {
-  inputs: unknown[] = [];
-  public exceptionError = false;
-  public async execute(login: string, senha: string): Promise<string> {
-    this.inputs.push(login);
-    this.inputs.push(senha);
-    if (this.exceptionError) throw new Error("Error");
-    return "access_token";
-  }
-}
+import { AuthController } from "../../src/presentational/controllers/auth";
+import { AuthUsecaseMock } from "../mocks/usecases/auth";
 
 function makeSut() {
   const authUsecase = new AuthUsecaseMock();

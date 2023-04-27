@@ -1,16 +1,8 @@
-import { ITokenGenerator } from "../protocols/helpers/jwt";
-import { AuthUsecase } from "./auth";
 import * as dotenv from "dotenv";
+import { AuthUsecase } from "../../src/data/usecases/auth";
+import { JwtServiceMock } from "../mocks/helpers/jwtMock";
 
 dotenv.config();
-
-class JwtServiceMock implements ITokenGenerator {
-  public input: unknown = null;
-  public async generate(data: string): Promise<string> {
-    this.input = data;
-    return "access_token";
-  }
-}
 
 function makeSut() {
   const jwtService = new JwtServiceMock();

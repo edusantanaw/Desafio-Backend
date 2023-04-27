@@ -1,8 +1,8 @@
-import { LoadUsecaseMock } from "../../../test/mocks/usecases/load";
-import { makeValidCard } from "../../data/usecases/createCard.test";
-import { ICard } from "../../types/card";
-import { ServerError } from "../helpers/http-response";
-import { LoadController } from "./load";
+import { LoadUsecaseMock } from "../mocks/usecases/load";
+import { makeValidCard } from "../usecases/createCard.test";
+import { ICard } from "../../src/types/card";
+import { ServerError } from "../../src/presentational/helpers/http-response";
+import { LoadController } from "../../src/presentational/controllers/load";
 
 function makeSut() {
   const loadUsecase = new LoadUsecaseMock<ICard>();

@@ -1,26 +1,14 @@
-import { LoadUsecaseMock } from "../../../test/mocks/usecases/load";
-import { makeValidCard } from "../../data/usecases/createCard.test";
-import { IDeleteUsecase } from "../../domain/usecases/delete";
-import { ILoadUsecase } from "../../domain/usecases/load";
-import { ICard } from "../../types/card";
+import { DeleteController } from "../../src/presentational/controllers/delete";
 import {
-  BadRequest,
   NoContent,
   NotFound,
   Ok,
   ServerError,
-} from "../helpers/http-response";
-import { DeleteController } from "./delete";
-
-class DeleteUsecaseMock implements IDeleteUsecase {
-  input: unknown = null;
-  cardExists = true;
-  public async execute(id: string): Promise<boolean> {
-    this.input = id;
-    if (!this.cardExists) return false;
-    return true;
-  }
-}
+} from "../../src/presentational/helpers/http-response";
+import { ICard } from "../../src/types/card";
+import { DeleteUsecaseMock } from "../mocks/usecases/delete";
+import { LoadUsecaseMock } from "../mocks/usecases/load";
+import { makeValidCard } from "../usecases/createCard.test";
 
 function makeSut() {
   const deleteUsecase = new DeleteUsecaseMock();

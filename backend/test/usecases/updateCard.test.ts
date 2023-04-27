@@ -1,7 +1,7 @@
-import { RepositoryInMemory } from "../../../test/mocks/repository";
-import { ICard } from "../../types/card";
+import { RepositoryInMemory } from "../mocks/repository";
+import { ICard } from "../../src/types/card";
 import { makeValidCard } from "./createCard.test";
-import { UpdateCardUsecase } from "./updateCard";
+import { UpdateCardUsecase } from "../../src/data/usecases/updateCard";
 
 function makeSut() {
   const cardRepository = new RepositoryInMemory<ICard>();
@@ -10,7 +10,7 @@ function makeSut() {
   return { cardRepository, updateCardUsecase };
 }
 
-describe("", () => {
+describe("UpdateCardUsecase", () => {
   test("Should call repository.loadById with correct value", async () => {
     const { updateCardUsecase, cardRepository } = makeSut();
     await updateCardUsecase.execute({ ...makeValidCard(), id: "any_id" });

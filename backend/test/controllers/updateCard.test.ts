@@ -1,8 +1,8 @@
-import { SchemaValidatorMock } from "../../../test/mocks/helpers/schemaValidator";
-import { UpdateUsecaseMock } from "../../../test/mocks/usecases/updateCard";
-import { makeValidCard } from "../../data/usecases/createCard.test";
-import { ICard } from "../../types/card";
-import { UpdateCardController } from "./updateCard";
+import { SchemaValidatorMock } from "../mocks/helpers/schemaValidator";
+import { UpdateUsecaseMock } from "../mocks/usecases/updateCard";
+import { makeValidCard } from "../usecases/createCard.test";
+import { ICard } from "../../src/types/card";
+import { UpdateCardController } from "../../src/presentational/controllers/updateCard";
 
 function makeSut() {
   const schemaValidator = new SchemaValidatorMock<ICard>();

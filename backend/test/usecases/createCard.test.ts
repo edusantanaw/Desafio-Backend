@@ -1,6 +1,6 @@
-import { RepositoryInMemory } from "../../../test/mocks/repository";
-import { ICard } from "../../types/card";
-import { CreateCardUsecase } from "./createCard";
+import { RepositoryInMemory } from "../mocks/repository";
+import { ICard } from "../../src/types/card";
+import { CreateCardUsecase } from "../../src/data/usecases/createCard";
 
 export function makeValidCard() {
   return {

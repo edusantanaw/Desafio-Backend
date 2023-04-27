@@ -1,7 +1,7 @@
-import { RepositoryInMemory } from "../../../test/mocks/repository";
-import { ICard } from "../../types/card";
+import { RepositoryInMemory } from "../mocks/repository";
+import { ICard } from "../../src/types/card";
 import { makeValidCard } from "./createCard.test";
-import { LoadUsecase } from "./load";
+import { LoadUsecase } from "../../src/data/usecases/load";
 
 function makeSut() {
   const cardRepository = new RepositoryInMemory<ICard>();
