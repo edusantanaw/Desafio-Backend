@@ -1,14 +1,6 @@
 import { Request, Response } from "express";
 import { ExceptionError } from "../../presentational/helpers/http-response";
-
-export type httpResponse<T> = {
-  statusCode: number;
-  body: T;
-};
-
-interface IController<input> {
-  handle: (data: input) => Promise<httpResponse<unknown>>;
-}
+import { IController } from "../../presentational/protocols/controller";
 
 export function adapter<In>(controller: IController<In>) {
   return async (req: Request, res: Response) => {

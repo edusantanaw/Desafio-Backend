@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { Unauthorized } from "../../presentational/helpers/http-response";
 import { JwtService } from "../../data/helpers/jwtService";
-import { httpResponse } from "../adapter/express";
+import { httpResponse } from "../../presentational/protocols/httpResponse";
 
 const jwt = new JwtService();
 

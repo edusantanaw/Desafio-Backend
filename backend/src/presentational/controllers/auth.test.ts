@@ -4,9 +4,9 @@ import { AuthController } from "./auth";
 class AuthUsecaseMock implements IAuthUsecase {
   inputs: unknown[] = [];
   public exceptionError = false;
-  public async execute(login: string, password: string): Promise<string> {
+  public async execute(login: string, senha: string): Promise<string> {
     this.inputs.push(login);
-    this.inputs.push(password);
+    this.inputs.push(senha);
     if (this.exceptionError) throw new Error("Error");
     return "access_token";
   }
@@ -21,16 +21,16 @@ function makeSut() {
 describe("AuthController", () => {
   test("Should return a badRequest if login is not provided", async () => {
     const { authController } = makeSut();
-    const response = await authController.handle({ login: "", password: "" });
+    const response = await authController.handle({ login: "", senha: "" });
     expect(response.body).toBe("O login é necessario!");
     expect(response.statusCode).toBe(400);
   });
 
-  test("Should return a badRequest if password is not provided", async () => {
+  test("Should return a badRequest if senha is not provided", async () => {
     const { authController } = makeSut();
     const response = await authController.handle({
       login: "any",
-      password: "",
+      senha: "",
     });
     expect(response.body).toBe("A senha é necessaria!");
     expect(response.statusCode).toBe(400);
@@ -41,7 +41,7 @@ describe("AuthController", () => {
     authUsecase.exceptionError = true;
     const response = await authController.handle({
       login: "any",
-      password: "any",
+      senha: "any",
     });
     expect(response.body).toBe("Error");
     expect(response.statusCode).toBe(400);
@@ -51,7 +51,7 @@ describe("AuthController", () => {
     const { authController } = makeSut();
     const response = await authController.handle({
       login: "any",
-      password: "any",
+      senha: "any",
     });
     expect(response.body).toBe("access_token");
     expect(response.statusCode).toBe(200);

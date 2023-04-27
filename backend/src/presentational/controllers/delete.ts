@@ -7,17 +7,19 @@ import {
   Ok,
   ServerError,
 } from "../helpers/http-response";
+import { IController } from "../protocols/controller";
+import { httpResponse } from "../protocols/httpResponse";
 
 type data = {
   id: string;
 };
 
-export class DeleteController<T> {
+export class DeleteController<T> implements IController<data> {
   constructor(
     private readonly deleteCardUsecase: IDeleteUsecase,
     private readonly loadUsecase: ILoadUsecase<T>
   ) {}
-  public async handle({ id }: data) {
+  public async handle({ id }: data): Promise<httpResponse<unknown>> {
     try {
       if (!id) return BadRequest("id invalido!");
       const response = await this.deleteCardUsecase.execute(id);

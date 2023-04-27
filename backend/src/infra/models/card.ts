@@ -1,6 +1,8 @@
 import { Model, DataTypes } from "sequelize";
 import database from "../../main/config/db";
 
+const MODEL_NAME = "cards";
+
 class Card extends Model {}
 
 Card.init(
@@ -24,8 +26,9 @@ Card.init(
   },
   {
     sequelize: database,
-    modelName: "cards",
+    modelName: MODEL_NAME,
     timestamps: true,
   }
 );
-export {Card}
+
+export { Card };

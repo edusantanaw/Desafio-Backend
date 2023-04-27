@@ -1,16 +1,17 @@
 import { Request, Response, NextFunction } from "express";
 import moment from "moment-timezone";
 
-type ILogger = (date: string, id: string, title: string) => void;
+type dataLogger = {
+  date: string;
+  id: string;
+  title: string;
+};
 
-const updateLogger = (data: string, id: string, title: string) =>
-  logger(data, id, title, "Atualizado");
+type ILogger = (data: dataLogger) => void;
 
-const removeLogger = (data: string, id: string, title: string) =>
-  logger(data, id, title, "Removido");
-
-function logger(date: string, id: string, title: string, op: string) {
-  console.log(`${date} - Card ${id} - ${title} - ${op}  `);
+function logger(data: dataLogger, typeAction: string) {
+  const { date, id, title } = data;
+  console.log(`${date} - Card ${id} - ${title} - ${typeAction}`);
 }
 
 function loggerMiddleware(logger: ILogger) {
@@ -18,10 +19,14 @@ function loggerMiddleware(logger: ILogger) {
     const id = req.params.id;
     const title = req.body.titulo;
     const date = getDate();
-    logger(date, id, title);
+    logger({ id, title, date });
     next();
   };
 }
+
+const updateLogger = (data: dataLogger) => logger(data, "Atualizado");
+const removeLogger = (data: dataLogger) => logger(data, "Removido");
+
 export const updateLoggerMiddleware = loggerMiddleware(updateLogger);
 export const removeLoggerMiddleware = loggerMiddleware(removeLogger);
 

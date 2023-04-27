@@ -8,7 +8,7 @@ import {
   removeLoggerMiddleware,
   updateLoggerMiddleware,
 } from "../middlewares/logger";
-import verifyXss from "../middlewares/verify-xss";
+import removeXss from "../middlewares/removeXss";
 import { DeleteCardControllerFactory } from "../factory/controller/deleteCard";
 
 export default (router: Router) => {
@@ -16,13 +16,13 @@ export default (router: Router) => {
   router.post(
     "/card",
     verifyAuth,
-    verifyXss,
+    removeXss,
     adapter(CreateCardControllerFactory())
   );
   router.put(
     "/card/:id",
     verifyAuth,
-    verifyXss,
+    removeXss,
     updateLoggerMiddleware,
     adapter(UpdateCardControllerFactory())
   );
