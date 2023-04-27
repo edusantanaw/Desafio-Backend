@@ -1,18 +1,39 @@
+## Configurações necessarias no projeto
+### Backend
+   - Renomear o arquivo .env.example para .env 
+   - Editar as variaveis de ambiente
+
 ## Como iniciar o projeto
 ### Backend
+Instalar dependências:
 
-        yarn ou npm install // instalar dependências
-        yarn dev ou npm run dev // Iniciar backend
+        yarn ou npm install
+
+Iniciar Backend:
+
+        yarn dev ou npm run dev
 
 ### Frontend 
-        yarn ou npm install /// instalar dependências
-        yarn start ou npm run start /// Iniciar o frontend
+Instalar dependências
+
+        yarn ou npm install
+
+Iniciar frontend:
+
+        yarn start ou npm run start
 
 ### Usando o Docker
+Iniciar projeto usando o docker-compose:
+
     docker-compose up
 
 
-## Configurações
+## Tecnologias utilizadas
 ### Backend
-   * Renomear o arquivo .env_example para .env 
-   * Editar as variaveis de ambiente
+ * NodeJs
+ * Express
+ * Typescript
+ * Sequelize
+ * Sqlite
+ * Zod
+ * Jest
