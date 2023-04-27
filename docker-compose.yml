@@ -1,11 +1,8 @@
-version: "1"
+version: "3.7"
 services:
   frontend:
-     build: ./frontend
-    ports: "3000:3000"
-    volumes: ./frontend
-    command: ["sh", "-c", "yarn install && yarn start"]
+      build: ./FRONT
+      ports: ["3000:3000"]
   backend:
-    build: ./backend
-    ports: "5000:5000"
-    command: ["sh", "-c", "yarn install && yarn dev"]
+      build: ./BACK
+      ports: ["5000:5000"]
