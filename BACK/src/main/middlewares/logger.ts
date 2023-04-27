@@ -17,7 +17,7 @@ function logger(data: dataLogger, typeAction: string) {
 function loggerMiddleware(logger: ILogger) {
   return (req: Request, res: Response, next: NextFunction) => {
     const id = req.params.id;
-    const title = req.body.titulo;
+    const title = req.body.titulo ?? "default_titulo";
     const date = getDate();
     logger({ id, title, date });
     next();
